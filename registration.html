@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #7f5a80 0%, #3d2e4f 70%);
+            color: #fff;
+            /* White text for better visibility on dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Set minimum viewport height */
+        }
+
+        #choiceContainer {
+            display: flex;
+            justify-content: space-around;
+            width: 400px;
+        }
+
+        .choiceBox {
+            width: 150px;
+            height: 150px;
+            background-color: goldenrod;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .choiceBox:hover {
+            transform: translateY(-5px);
+        }
+
+        .choiceBox h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        #loginBox {
+            animation: slideInLeft 0.5s ease forwards;
+        }
+
+        #signupBox {
+            animation: slideInRight 0.5s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-200px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(200px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- Choice Animation Container -->
+    <div id="choiceContainer">
+        <div class="choiceBox" id="loginBox" onclick="redirectToLoginPage()">
+            <h2>Login</h2>
+        </div>
+        <div class="choiceBox" id="signupBox" onclick="redirectToSignupPage()">
+            <h2>Signup</h2>
+        </div>
+    </div>
+    <script>
+        function redirectToLoginPage() {
+            // Open the login page in a new tab or window
+            window.open('login.html', '_blank');
+        }
+
+        function handleRegistration(event) {
+            // Prevent the form from submitting and refreshing the page
+            event.preventDefault();
+
+            // Perform registration logic here (e.g., send data to server)
+
+            // Show a pop-up message
+            alert('Login completed');
+
+            // Redirect back to the previous page (replace 'index.html' with your actual home page)
+            window.location.href = 'index.html';
+        }
+
+        function redirectToSignupPage() {
+            // Open the login page in a new tab or window
+            window.open('signup.html', '_blank');
+        }
+
+        function handleRegistration(event) {
+            // Prevent the form from submitting and refreshing the page
+            event.preventDefault();
+
+            // Perform registration logic here (e.g., send data to server)
+
+            // Show a pop-up message
+            alert('Signup completed');
+
+            // Redirect back to the previous page (replace 'index.html' with your actual home page)
+            window.location.href = 'index.html';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

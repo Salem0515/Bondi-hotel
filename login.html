@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #7f5a80 0%, #3d2e4f 70%);
+            color: #fff;
+            /* White text for better visibility on dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Set minimum viewport height */
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 438px;
+            color: goldenrod;
+        }
+
+        .welcome-message h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-message p {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        .login-form {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent dark background */
+            padding: 30px;
+            border-radius: 5px;
+            width: 400px;
+            /* Adjust width as needed */
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: goldenrod;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background-color: rgba(0, 0, 0, 0.3);
+            /* Semi-transparent input field */
+            color: goldenrod;
+            /* White text for input field */
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .form-control::placeholder {
+            /* Style placeholder text */
+            color: goldenrod;
+            /* Light gray placeholder text */
+        }
+
+        .btn-primary {
+            background-color: #7f5a80;
+            /* Purple button color */
+            border-color: #7f5a80;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: gold;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #3d2e4f;
+            transform: scale(1.1);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .social-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-login a {
+            margin: 0 10px;
+            color: goldenrod;
+        }
+    </style>
+
+    <div class="welcome-message">
+        <h1>Welcome back home
+            <i class="fa fa-hotel" aria-hidden="true"></i>
+            <i class="fa-regular fa-face-smile"></i>
+        </h1>
+        <p>Please login to access your account.</p>
+    </div>
+
+    <div class="login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                    required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
+        <div class="social-login">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+
+
+    <!-- Include Bootstrap JS (optional if you don't need JavaScript features from Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the username and password values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // You can perform validation here if needed
+
+            // Example: Send the login credentials to a server using fetch
+            fetch('login_endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+                .then(response => {
+                    // Handle the response from the server
+                    if (response.ok) {
+                        // Redirect the user to the dashboard or another page
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        // Display an error message or handle the error appropriately
+                        alert('Invalid username or password. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>
