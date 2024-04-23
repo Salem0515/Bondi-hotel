@@ -69,6 +69,7 @@
 }
 /* start navbar */
 .navbar{
+
     background-color: var(--dark-color);
     background: linear-gradient(to left, #19283f, #33d1cc, #ffc400, #ff3150, #19283f);
     background-size: 500% 100%;  /* Adjust the size based on your preference */
@@ -79,6 +80,10 @@
 
 .navbar .navbar-nav .nav-link{
     color: white;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+
+
 }
 
 .navbar .navbar-nav .nav-link .active,
@@ -104,9 +109,15 @@
     border-color: white;
 }
 
+.navbar-nav .nav-item {
+    text-align: center;
+}
 
+.navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+}
 /* end .navbar */
-
 /* star landing */
 .landing{
     background-color: var(--dark-color);
