@@ -67,7 +67,7 @@
                 <i class="fa-regular fa-face-smile"></i>
             </h1>
             <p class="fs-5">We are very happy for your visit and We hope that you will visit again</p>
-            <a class="btn btn-danger main-btn rounded-pill" href="#">Book your room</a>
+            <a class="btn btn-danger main-btn rounded-pill" href="#" onclick="redirectToRegistrationPage()">Book your room</a>
         </div>
     </div>
     <div class="featchers fade-in text-center pt-5 pb-5">
@@ -495,6 +495,24 @@
         }
 
         function handleRegistration(event) {
+            // Prevent the form from submitting and refreshing the page
+            event.preventDefault();
+
+            // Perform registration logic here (e.g., send data to server)
+
+            // Show a pop-up message
+            alert('Registration completed');
+
+            // Redirect back to the previous page (replace 'index.html' with your actual home page)
+            window.location.href = 'index.html';
+        }
+
+        function redirectToBookingPage() {
+            // Open the login page in a new tab or window
+            window.open('rooms.html', '_blank');
+        }
+
+        function handleBooking(event) {
             // Prevent the form from submitting and refreshing the page
             event.preventDefault();
 
