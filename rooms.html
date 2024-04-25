@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Rooms</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/rooms.css"> <!-- Link to your custom CSS file -->
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Available Rooms
+            <i class="fa fa-hotel" aria-hidden="true"></i>
+            <i class="fa-regular fa-face-smile"></i>
+        </h1>
+        <div class="form-group">
+            <label for="roomType">Select Room Type:</label>
+            <select class="form-control" id="roomType">
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+            </select>
+        </div>
+
+        <!-- Single Room Carousel -->
+        <div id="singleRoomCarousel" class="carousel slide mt-4">
+            <h1 class="text-center mb-4">Single Rooms</h1>
+            <ol class="carousel-indicators">
+                <li data-target="#singleRoomCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#singleRoomCarousel" data-slide-to="1"></li>
+                <li data-target="#singleRoomCarousel" data-slide-to="2"></li>
+                <li data-target="#singleRoomCarousel" data-slide-to="3"></li>
+                <li data-target="#singleRoomCarousel" data-slide-to="4"></li>
+                <!-- Add more indicators for additional rooms -->
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/Imges/pikaso_texttoimage_hotel-SINGLE-hd-rooms-img (1).jpeg" class="d-block w-100"
+                        alt="Room 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 1 (200$ pre night)</h5>
+                        <p>Cozy Retreat: Our single rooms offer a cozy retreat with all the essential amenities for a
+                            comfortable stay. Perfect for solo travelers seeking peace and relaxation..</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-SINGLE-hd-rooms-img.jpeg" class="d-block w-100"
+                        alt="Room 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 2 (200$ pre night)</h5>
+                        <p>Modern Comfort: Experience modern comfort in our stylish single rooms. Thoughtfully designed
+                            interiors and convenient facilities ensure a pleasant stay for solo guests.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-SINGLE-hd-rooms-img (2).jpeg" class="d-block w-100"
+                        alt="Room 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 3 (200$ pre night)</h5>
+                        <p>Tranquil Oasis: Step into a tranquil oasis in our single rooms, where you can unwind after a
+                            day of exploration. Enjoy serene surroundings and a peaceful ambiance.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-SINGLE-hd-rooms-img (3).jpeg" class="d-block w-100"
+                        alt="Room 4">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 4 (200$ pre night)</h5>
+                        <p>Compact Luxury: Indulge in compact luxury with our single rooms, featuring elegant
+                            furnishings and luxurious touches. Ideal for those seeking a touch of refinement during
+                            their travels.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-SINGLE-hd-rooms-img (5).jpeg" class="d-block w-100"
+                        alt="Room 5">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 5 (200$ pre night)</h5>
+                        <p>Efficient Space: Our single rooms offer efficient use of space without compromising on
+                            comfort. Experience smart design and functionality tailored to meet the needs of solo
+                            travelers.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Add more carousel items for additional rooms -->
+            </div>
+            <a class="carousel-control-prev" href="#singleRoomCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#singleRoomCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Double Room Carousel (Initially Hidden) -->
+        <div id="doubleRoomCarousel" class="carousel slide mt-4" style="display: none;">
+            <h1 class="text-center mb-4">Double Rooms</h1>
+            <ol class="carousel-indicators">
+                <li data-target="#doubleRoomCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#doubleRoomCarousel" data-slide-to="1"></li>
+                <li data-target="#doubleRoomCarousel" data-slide-to="2"></li>
+                <li data-target="#doubleRoomCarousel" data-slide-to="3"></li>
+                <li data-target="#doubleRoomCarousel" data-slide-to="4"></li>
+                <!-- Add more indicators for additional rooms -->
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/Imges/pikaso_texttoimage_hotel-DOUBLE-hd-rooms-img (1).jpeg" class="d-block w-100"
+                        alt="Room 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 1 (300$ pre night)</h5>
+                        <p>Spacious Retreat: Our double rooms provide a spacious retreat for couples or small families.
+                            Enjoy ample room to relax and unwind in comfort.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-DOUBLE-hd-rooms-img.jpeg" class="d-block w-100"
+                        alt="Room 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 2 (200$ pre night)</h5>
+                        <p>Charming Getaway: Experience a charming getaway in our double rooms, featuring cozy
+                            furnishings and inviting ambiance. Perfect for romantic escapes or quality family time.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-DOUBLE-hd-rooms-img (2).jpeg" class="d-block w-100"
+                        alt="Room 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 3 (275$ pre night)</h5>
+                        <p>Comfortable Haven: Find your comfortable haven in our double rooms, where you can recharge
+                            and rejuvenate amidst tranquil surroundings. Ideal for couples seeking relaxation.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-DOUBLE-hd-rooms-img (3).jpeg" class="d-block w-100"
+                        alt="Room 4">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 4 (500$ pre night)</h5>
+                        <p>Elegant Sanctuary: Step into an elegant sanctuary in our double rooms, boasting stylish decor
+                            and modern amenities. Enjoy a luxurious stay with your loved one.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Imges/pikaso_texttoimage_hotel-DOUBLE-hd-rooms-img (5).jpeg" class="d-block w-100"
+                        alt="Room 5">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Room 5 (350$ pre night)</h5>
+                        <p>Family-Friendly Accommodation: Our double rooms offer family-friendly accommodation with
+                            enough space for everyone to feel at home. Create lasting memories together in a welcoming
+                            environment.</p>
+                        <form id="bookingForm">
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+
+                    </div>
+                </div>
+                <!-- Add more carousel items for additional rooms -->
+            </div>
+            <a class="carousel-control-prev" href="#doubleRoomCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#doubleRoomCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS, Popper.js, and jQuery required for Bootstrap components -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            console.log("Document ready!");
+
+        });
+        // Function to toggle between single and double room carousels based on user selection
+        $('#roomType').change(function () {
+            var selectedRoomType = $(this).val();
+            if (selectedRoomType === 'single') {
+                $('#singleRoomCarousel').show();
+                $('#doubleRoomCarousel').hide();
+            } else if (selectedRoomType === 'double') {
+                $('#singleRoomCarousel').hide();
+                $('#doubleRoomCarousel').show();
+            }
+        });
+
+        // Initial setup to show single room carousel by default
+        $('#singleRoomCarousel').show();
+
+
+
+        $(document).ready(function () {
+            // Function to handle room booking
+            function RoomBooked(event) {
+                event.preventDefault(); // Prevent form submission
+                alert('Signup completed'); // Show alert
+                window.location.href = 'index.html'; // Redirect to index.html
+            }
+
+            // Bind RoomBooked function to form submission event
+            $('#bookingForm').submit(RoomBooked);
+        });
+    </script>
+
+</body>
+
+</html>
